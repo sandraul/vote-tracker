@@ -2,11 +2,28 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="app.js"></script>
     <title>Vote Tracker</title>
   </head>
   <body>
-    <h1>-Pick your favorite-</h1>
-    <section id="image-container"></section>
+    <header>
+       <h1>Vote Tracker</h1>
+       <p class="banner">Click on your favorite picture!</p>
+    </header>
+
+    <div class="container">
+      <div class="frame">
+        <section class="progess-bar">
+        </section> <!-- progess bar -->
+        <div class="display">
+          <section id="image-container"></section>
+                  <!-- img created from app.js -->
+          <div class ="favorite">
+              <p id="show-favorite">Your favorite picture was: </p>
+          </div> <!-- favorite picture -->
+        </div> <!-- image container -->
+      </div> <!-- frame -->
+    </div> <!-- container -->
   </body>
 </html>
