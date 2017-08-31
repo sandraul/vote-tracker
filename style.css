@@ -1,12 +1,116 @@
-h1 {
-  text-align: center;
+body{
+   font-family: 'Muli', Helvetica, Arial, sans-serif;
+   background: #cfe1d4;
 }
+
+/*----------- header ----------- */
+
+.container {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 50px 50px 50px;
+    border: 5px solid #29362c;
+    background: white;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color:  #89B594;
+    padding: 20px 0 20px 15px;
+    margin: -10px;
+    box-shadow: 0px 2px 6px #433F3F;
+}
+
+header h1{
+    display: inline;
+    color: white;
+    text-transform: uppercase;
+    padding-right: 20px;
+    font-weight: lighter;
+}
+
+p.banner {
+   display: inline;
+   color: #29362c;
+}
+
+/*----------- Display Area -----------*/
+
+/*.frame{
+    position: relative;
+}*/
+
+/*.display{
+    width:60%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}*/
 
 #image-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #image-container img {
   height: 250px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #29362c;
+  border-radius: 10px;
+}
+
+#show-favorite{
+    width: 100%;
+    color: #cfe1d4;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 25% auto;
+    text-align: center;
+}
+
+.favorite {
+    width: 50%;
+    height: 40px;
+    position: center;
+    background-color: #36483b;
+    border-radius: 100px;
+    z-index: 10;
+    box-shadow: 2px 2px 8px #534D4D;
+}
+
+/*----------- Media Properties ----------- */
+
+@media (max-width: 750px) {
+    .container{
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .display{
+        width:90%;
+    }
+    #image-container{
+        width: 90%;
+        margin: auto;
+    }
+    section {
+      flex-direction: column;
+      padding: 100px 50px 50px 50px;
+    }
+    h1{
+        font-size: 1.4em;
+    }
+    p{
+        font-size: 1em;
+    }
+    .favorite{
+        left: 80%;
+        top: 10%;
+    }
+    #show-favorite{
+        font-size: 1.3em;
+    }
 }
