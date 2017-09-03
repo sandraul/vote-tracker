@@ -3,12 +3,12 @@
 //Create a Constructor function for all the products BusMall sells
 var clickTotal = 0;
 
-var ImageOption = function(name, ) {
+var ImageOption = function(fileName, name) {
   this.name = name;
   this.tally = 0;
-  this.fileName = name;
+  this.fileName = fileName;
   this.label = name; //Add this line when building chart
-  this.y = Math.floor(Math.random() * images.length); //Add this line when building chart
+  this.y = 0; //Add this line when building chart
   }
 
 var images = []; //Array to hold all of the ImageOption instances
@@ -72,22 +72,53 @@ function showImages() {
 
 function recordClick(event) {
   images[event.target.dataset.index].tally++;
+  images[event.target.dataset.index].y++;
 
   clickTotal++; //this is the same as clickTotal = clickTotal +1
   //When reach maximum clicks remove the event listener
   if (clickTotal == 15) {
     document.getElementById("image-container").innerHTML = "";
-    // var product = document.getElementById("result");
-    // product.removeEventListener("click", recordClick);
-    //After the 15th click load click tracker on list
-    var list = document.getElementById("faves-list");
-    for (var i = 0; i < images.length; i++) {
-      var li = document.createElement("li");
-      li.innerText = images[i].name + " was clicked " + images[i].tally + " times";
-      //Append the list items into the html list
-      list.appendChild(li);
+  //   var product = document.getElementById("click-count");
+  //   // product.removeEventListener("click", recordClick);
+  //   //After the 15th click load click tracker on list
+  //   var list = document.getElementById("faves-list");
+  //   for (var i = 0; i < images.length; i++) {
+  //     var li = document.createElement("li");
+  //     li.innerText = images[i].name + " was clicked " + images[i].tally + " times";
+  //     //Append the list items into the html list
+  //     list.appendChild(li);
+  //   }
+  // }
+  var chart = new CanvasJS.Chart("chartContainer",
+  {
+    title:{
+      text: "Busmall Product Chart"
+    },
+    animationEnabled: true,
+    axisY: {
+      title: "Clicks"
+    },
+    legend: {
+      verticalAlign: "bottom",
+      horizontalAlign: "center"
+    },
+    theme: "theme2",
+    data: [
+
+    {
+      type: "column",
+      showInLegend: true,
+      legendMarkerColor: "grey",
+      legendText: "Bus Mall Products",
+      dataPoints: images
+
     }
+    ]
+  });
+
+  chart.render();
   }
+
   else {
     showImages();
   }
