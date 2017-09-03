@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="vendors/canvasjs.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <title>Vote Tracker</title>
   </head>
@@ -13,10 +14,13 @@
     </header>
 
     <div class="container">
+      <div id="chartContainer" style="height: 300px; width: 100%;">
+      </div>
         <!-- <section class="progess-bar"></section> <!- progess bar -->
+        <!-- <p id="click-counts">You have clicked (number of times) aout of (remaining times)</p> -->
 
         <section id="image-container"></section> <!-- img created from app.js -->
-        <ul id="faves-list"></ul>
+           <!-- <ul id="faves-list"></ul> -->
 
         <!-- <section id="result"></section> determinar esta area para que aparezca la grafica de resultados -->
     </div> <!-- container -->
