@@ -27,14 +27,15 @@ header {
 header h1{
     display: inline;
     color: white;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     padding-right: 20px;
     font-weight: lighter;
 }
 
-p.banner {
+pre.banner {
    display: inline;
    color: #29362c;
+   font-size: 14px;
 }
 
 /*----------- Display Area -----------*/
@@ -56,7 +57,9 @@ p.banner {
 }
 
 #image-container img {
+  display: flex;
   height: 250px;
+  width: 250px;
   padding: 10px;
   box-shadow: 2px 2px 5px #29362c;
   border-radius: 10px;
@@ -66,7 +69,6 @@ p.banner {
     width: 100%;
     color: #cfe1d4;
     font-size: 1.8em;
-    font-weight: bold;
     margin: 25% auto;
     text-align: center;
 }
@@ -81,6 +83,14 @@ p.banner {
     box-shadow: 2px 2px 8px #534D4D;
 }
 
+#favorite-list {
+  width: 100%;
+  color: black;
+  font-size: 13px;
+  margin: 25% auto;
+  text-align: center;
+}
+
 /*----------- Media Properties ----------- */
 
 @media (max-width: 750px) {
@@ -88,9 +98,6 @@ p.banner {
         width: 100%;
         justify-content: space-between;
         flex-direction: row;
-    }
-    .display{
-        width:90%;
     }
     #image-container{
         width: 90%;
@@ -103,7 +110,7 @@ p.banner {
     h1{
         font-size: 1.4em;
     }
-    p{
+    pre{
         font-size: 1em;
     }
     .favorite{
