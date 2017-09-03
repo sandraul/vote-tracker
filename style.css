@@ -40,20 +40,10 @@ pre.banner {
 
 /*----------- Display Area -----------*/
 
-/*.frame{
-    position: relative;
-}*/
-
-/*.display{
-    width:60%;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}*/
-
 #image-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 #image-container img {
@@ -93,19 +83,15 @@ pre.banner {
 
 /*----------- Media Properties ----------- */
 
-@media (max-width: 750px) {
+@media (max-width: 1050px) {
     .container{
         width: 100%;
         justify-content: space-between;
         flex-direction: row;
     }
     #image-container{
-        width: 90%;
+        width: 100%;
         margin: auto;
-    }
-    section {
-      flex-direction: column;
-      padding: 100px 50px 50px 50px;
     }
     h1{
         font-size: 1.4em;
