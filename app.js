@@ -79,7 +79,7 @@ function recordClick(event) {
   if (clickTotal == 15) {
     document.getElementById("image-container").innerHTML = "";
   //   var product = document.getElementById("click-count");
-  //   // product.removeEventListener("click", recordClick);
+  //   //product.removeEventListener("click", recordClick);
   //   //After the 15th click load click tracker on list
   //   var list = document.getElementById("faves-list");
   //   for (var i = 0; i < images.length; i++) {
