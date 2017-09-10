@@ -80,6 +80,7 @@ chartRender();
 }
 else {
   showImages();
+  localStorage.setItem("party",JSON.stringify(images));
 }
 
 var pBar = document.getElementById("progressBar");
@@ -144,4 +145,10 @@ function nextRound () {
 }
 }
 
-window.addEventListener("load", showImages);
+function pageReload () {
+  if(localStorage.getItem("party") != null) {
+    images = JSON.parse(localStorage.getItem("party"))
+  }
+  showImages();
+}
+window.addEventListener("load", pageReload);
