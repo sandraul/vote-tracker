@@ -66,31 +66,38 @@ function showImages() {
   addImage("pictures/"+images[index3].fileName, index3);
 }
 
-//Make a function to record number of clicks of each image
-//getAttribute() returns the value of a specified attribute
-//on the element. If the given attribute does not exist,
-//the value returned will either be null or "" (the empty string
-
 function recordClick(event) {
   images[event.target.dataset.index].tally++;
   images[event.target.dataset.index].y++;
-
-
   clickTotal++; //this is the same as clickTotal = clickTotal +1
 
+  console.log(images[event.target.dataset.index]);
+
+  if (clickTotal == 15) {
+    document.getElementById("image-container").innerHTML = "";
+
+chartRender();
+}
+else {
+  showImages();
+}
+
 var pBar = document.getElementById("progressBar");
+var chart = document.getElementById("chartContainer");
 
   if (pBar.value <14) {
     pBar.value = clickTotal;
-    // document.getElementById("progressBar").innerHTML = "";
+    pBar.style.display = "block";
   }
   else {
     pBar.style.display = "none";
     chart.style.visibility = "visible";
   }
 
-  if (clickTotal == 15) {
-    document.getElementById("image-container").innerHTML = "";
+
+
+
+function chartRender() {
   var chart = new CanvasJS.Chart("chartContainer",
   {
     title:{
@@ -116,16 +123,25 @@ var pBar = document.getElementById("progressBar");
 
     }
     ]
-  });
-
+  })
   chart.render();
-  }
+};
 
-  else {
-    showImages();
-  }
 
-  console.log(images[event.target.dataset.index]);
+var Button = document.getElementById("reloadbutton");
+Button.addEventListener("click", nextRound);
+
+function nextRound () {
+  var pBar = document.getElementById("progressBar");
+  var chart = document.getElementById("chartContainer");
+  pBar.style.display = "block";
+  chart.style.visibility = "hidden";
+  chartRender();
+  pBar.value = "";
+  clickTotal = 0;
+  console.log(clickTotal);
+  showImages();
+}
 }
 
 window.addEventListener("load", showImages);

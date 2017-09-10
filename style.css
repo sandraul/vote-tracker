@@ -40,7 +40,7 @@ pre.banner {
 }
 
 .canvasjs-chart-canvas:first-child {
-  position: static !important;
+  position: static  !important;
 }
 
 #progressBar {
