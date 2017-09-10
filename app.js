@@ -74,21 +74,19 @@ function recordClick(event) {
   images[event.target.dataset.index].tally++;
   images[event.target.dataset.index].y++;
 
+
   clickTotal++; //this is the same as clickTotal = clickTotal +1
-  //When reach maximum clicks remove the event listener
+
+var pBar = clickTotal.value
+  if (pBar = 15) {
+    document.getElementById("progressBar").innerHTML = "";
+  }
+  else {
+    
+  }
+
   if (clickTotal == 15) {
     document.getElementById("image-container").innerHTML = "";
-  //   var product = document.getElementById("click-count");
-  //   //product.removeEventListener("click", recordClick);
-  //   //After the 15th click load click tracker on list
-  //   var list = document.getElementById("faves-list");
-  //   for (var i = 0; i < images.length; i++) {
-  //     var li = document.createElement("li");
-  //     li.innerText = images[i].name + " was clicked " + images[i].tally + " times";
-  //     //Append the list items into the html list
-  //     list.appendChild(li);
-  //   }
-  // }
   var chart = new CanvasJS.Chart("chartContainer",
   {
     title:{

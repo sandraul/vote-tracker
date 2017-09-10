@@ -1,12 +1,13 @@
 body{
    font-family: 'Muli', Helvetica, Arial, sans-serif;
-   background: #cfe1d4;
+   background: #DAFFEF;
 }
 
 /*----------- header ----------- */
 
 header {
     position: fixed;
+    z-index: 100;
     width: 100%;
     background-color:  #89B594;
     padding: 20px 0 20px 15px;
@@ -28,12 +29,27 @@ pre.banner {
 }
 
 .container {
+  width: 90%;
+  height: 100%;
   position: inherit;
   align-items: flex-start;
   text-align: center;
-  padding: 100px 50px 50px 50px;
-  border: 5px solid #29362c;
+  padding: 120px 50px 50px 50px;
+  border: 5px solid #230903;
   background: white;
+}
+
+.canvasjs-chart-canvas:first-child {
+  position: static !important;
+}
+
+#progressBar {
+  display: flex;
+  width: 95%;
+  padding-top: 15px;
+  /*height: 50px;*/
+  /*position: absolute;*/
+  /*border-radius: 50px;*/
 }
 
 #image-container {
@@ -47,7 +63,25 @@ pre.banner {
 #image-container img {
   height: 300px;
   width: 350px;
-  padding: 10px;
+  padding: inherit;
   box-shadow: 2px 2px 5px #29362c;
   border-radius: 10px;
+}
+
+a.btn {
+  /*border-radius: 10px;*/
+  padding-top: 20px;
+}
+
+a.btn:link, a:visited {
+   background-color: #89B594;
+   color: #230903;
+   padding: 14px 25px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+}
+
+a.btn:hover, a:active {
+   background-color: #C5E6A6;
 }
