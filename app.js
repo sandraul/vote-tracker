@@ -43,6 +43,7 @@ function addImage(imageFileName, index) {
 
 //Make a function to randomly choose 3 images from images array
 function showImages() {
+
   var index1 = Math.floor(Math.random() * images.length);
   var index2 = Math.floor(Math.random() * images.length);
   var index3 = Math.floor(Math.random() * images.length);
@@ -77,12 +78,15 @@ function recordClick(event) {
 
   clickTotal++; //this is the same as clickTotal = clickTotal +1
 
-var pBar = clickTotal.value
-  if (pBar = 15) {
-    document.getElementById("progressBar").innerHTML = "";
+var pBar = document.getElementById("progressBar");
+
+  if (pBar.value <14) {
+    pBar.value = clickTotal;
+    // document.getElementById("progressBar").innerHTML = "";
   }
   else {
-    
+    pBar.style.display = "none";
+    chart.style.visibility = "visible";
   }
 
   if (clickTotal == 15) {
