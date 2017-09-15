@@ -8,17 +8,14 @@
   <body>
     <header>
        <h1>BusMall</h1>
-       <pre class="banner">Which one would you like to have?   Click it!</pre>
-       <progress id="progressBar" value="" max="15"></progress>
+       <h2>Click on the image you like the best!</h2>
+       <button type="button" id="reloadbutton">Start Over</button>
     </header>
-
-    <div class="container">
-        <section id="image-container"></section>
-        <div id="chartContainer"></div>
-    </div>
-
-    <!-- <a class ="btn" href="#" onclick="window.location.reload()">Start Over</a> -->
-    <button type="button" id="reloadbutton">Start Over</button>
+    <main>
+      <section id="image-container"></section>
+      <progress id="progressBar" value="" max="15"></progress>
+      <div id="chartContainer"></div>
+    </main>
     <script type="text/javascript" src="vendors/canvasjs.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>

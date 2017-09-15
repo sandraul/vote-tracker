@@ -6,82 +6,105 @@ body{
 /*----------- header ----------- */
 
 header {
+    display: flex;
     position: fixed;
+    top: 0;
     z-index: 100;
     width: 100%;
     background-color:  #89B594;
     padding: 20px 0 20px 15px;
     margin: -10px;
-    box-shadow: 0px 2px 6px #433F3F;
+    box-shadow: 0px 2px 6px #230903;
 }
 
-header h1{
-    display: inline;
+header h1 {
     color: white;
     padding-right: 20px;
     font-weight: lighter;
 }
 
-pre.banner {
-   display: inline;
-   color: #29362c;
-   font-size: 14px;
+header h2 {
+  color: #29362c;
+  font-size: 16px;
+  margin-top: 40px;
 }
 
-.container {
-  width: 90%;
-  height: 100%;
-  position: inherit;
-  align-items: flex-start;
-  text-align: center;
-  padding: 120px 50px 50px 50px;
-  border: 5px solid #230903;
-  background: white;
+button {
+  width: 120px;
+  height: 50px;
+  transition: width 2s, height 2s;
+}
+
+button:hover {
+  width: 300px;
+  height: 60px;
+}
+
+#reloadbutton {
+  background-color: #29362C;
+  color: #DAFFEF;
+  border-radius: 10px;
+  margin: 20px 0 0 300px;
+  font-size: 1.2em;
+}
+
+#reloadbutton:hover {
+  background-color: #230903;
+}
+
+/*----------- images----------- */
+
+#image-container {
+  display: flex;
+  padding: 25px;
+  /*width: 95%;*/
+  border: 1px solid black;
+  margin-top: 100px;
+  justify-content: center;
+  flex-direction: row;
+  opacity: 0;
+}
+
+#image-container.imageFade {
+  opacity: 1;
+  /*opacity: 0.25;*/
+}
+
+#image-container img {
+  height: 200px;
+  width: 230px;
+  margin: 30px;
+  box-shadow: 2px 2px 5px #230903;
+  border-radius: 10px;
+  /*animation-name: imageFade;
+  animation-duration: 4s;*/
+}
+
+#image-container img:hover {
+  opacity: 0.5;
+  box-shadow: 2px 2px 5px #230903;
+}
+
+/*----------- chart ----------- */
+
+.canvasjs-chart-canvas {
+  /*padding: 120px 50px 50px 50px;*/
+  border: 1px solid #230903;
 }
 
 .canvasjs-chart-canvas:first-child {
-  position: static  !important;
+  background-color: white;
+}
+
+div {
+  display: block;
+  margin-top: 110px;
 }
 
 #progressBar {
   display: flex;
-  width: 95%;
-  padding-top: 15px;
-  /*height: 50px;*/
-  /*position: absolute;*/
-  /*border-radius: 50px;*/
-}
-
-#image-container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-#image-container img {
-  height: 300px;
-  width: 350px;
-  padding: inherit;
-  box-shadow: 2px 2px 5px #29362c;
-  border-radius: 10px;
-}
-
-a.btn {
-  /*border-radius: 10px;*/
-  padding-top: 20px;
-}
-
-a.btn:link, a:visited {
-   background-color: #89B594;
-   color: #230903;
-   padding: 14px 25px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-}
-
-a.btn:hover, a:active {
-   background-color: #C5E6A6;
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 120px;
+  justify-content: center;
 }

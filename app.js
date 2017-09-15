@@ -1,4 +1,3 @@
-
 //================Constructor function==================
 //Create a Constructor function for all the products BusMall sells
 var clickTotal = 0;
@@ -74,25 +73,35 @@ function recordClick(event) {
   console.log(images[event.target.dataset.index]);
 
   if (clickTotal == 15) {
-    document.getElementById("image-container").innerHTML = "";
+    var imgContainer = document.getElementById("image-container")
+    imgContainer.innerHTML = "";
+    imgContainer.style.display = "flex";
 
-chartRender();
-}
-else {
+    chartRender();
+  }
+  else {
   showImages();
-  localStorage.setItem("party",JSON.stringify(images));
-}
+  localStorage.setItem("reloadSet",JSON.stringify(images));
+
+  imgContainer.classList.remove("imageFade");
+  setTimeout(function(){
+    imgContainer.classList.add("imageFade")
+  }, 300
+)
+
+  }
 
 var pBar = document.getElementById("progressBar");
 var chart = document.getElementById("chartContainer");
 
   if (pBar.value <14) {
     pBar.value = clickTotal;
-    pBar.style.display = "block";
+    // pBar.style.display = "block";
   }
   else {
-    pBar.style.display = "none";
+    // pBar.style.display = "none";
     chart.style.visibility = "visible";
+
   }
 
 
@@ -133,22 +142,28 @@ var Button = document.getElementById("reloadbutton");
 Button.addEventListener("click", nextRound);
 
 function nextRound () {
-  var pBar = document.getElementById("progressBar");
-  var chart = document.getElementById("chartContainer");
-  pBar.style.display = "block";
-  chart.style.visibility = "hidden";
-  chartRender();
-  pBar.value = "";
   clickTotal = 0;
-  console.log(clickTotal);
+  var pBar = document.getElementById("progressBar");
+  var imgContainer = document.getElementById("image-container")
+  // var chart = document.getElementById("chartContainer");
   showImages();
+  // pBar.style.display = "block";
+  chart.style.visibility = "hidden";
+  imgContainer.style.display = "flex";
+  // chartRender();
+  pBar.value = "";
+  console.log(clickTotal);
 }
 }
 
 function pageReload () {
-  if(localStorage.getItem("party") != null) {
-    images = JSON.parse(localStorage.getItem("party"))
+  if(localStorage.getItem("reloadSet") != null) {
+    images = JSON.parse(localStorage.getItem("reloadSet"))
   }
   showImages();
+  setTimeout(function(){
+    document.getElementById("image-container").classList.add("imageFade")
+  }, 250
+)
 }
 window.addEventListener("load", pageReload);
